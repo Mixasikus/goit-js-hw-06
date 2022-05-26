@@ -8,4 +8,3 @@ Array.prototype.forEach.call(items, (element) => {
     console.log(`Category: ${title}
 Elements: ${itemsLength}`);
 });
-
