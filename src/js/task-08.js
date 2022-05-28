@@ -1,33 +1,24 @@
-const formLogin = document.querySelector(".login-form");
-// const buttonEl = document.querySelector("button");
+const form = document.querySelector(".login-form");
+const emailEl = document.querySelector('input[type="email"]').value;
+const passwordEl = document.querySelector('input[type="password"]').value;
 
-formLogin.addEventListener("submit", (event) => {
+let formElements = {
+    email: "", password: "" };
+    
+form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+    console.log(formData);
 
-    formData.forEach((value, name) => {
-        console.log(name);
-        console.log(value);
-        
-    });
-    
-    const formElements = event.currentTarget.elements;
-    const email = formElements.email.value;
-    const password = formElements.password.value;
-
-    const formDataElements = {
-        email, password,
-    };
-    console.log(formDataElements);
-
-    if (email === '') {
+    if (emailEl || passwordEl === "") {
         alert("Все поля должны быть заполнены!");
-    } else if (password === '') {
-        alert("Все поля должны быть заполнены!");
+    } else  {
+        formElements.email = emailEl;
+        formElements.password = passwordEl;
     }
     
-    formLogin.reset();
+document.querySelector('.login-form').reset();
 });
 
 
