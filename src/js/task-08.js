@@ -5,15 +5,13 @@ form.addEventListener("submit", (event) => {
 
     const formData = new FormData(event.currentTarget);
     console.log(formData);
-
-    formData.forEach((value, name) => {
-        console.log(name);
-        console.log(value);   
-    });
     
     const {
         elements: { email, password }
     } = event.currentTarget;
+
+    console.log(email);
+    console.log(password);
     
     if (email.value === "" || password.value === "") {
         alert("Все поля должны быть заполнены!");
